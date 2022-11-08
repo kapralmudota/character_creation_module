@@ -1,7 +1,10 @@
 from random import randint
+from graphic_arts.start_game_banner import run_screensaver
+"""This is the module responsible for creating a character."""
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Do function describing the logic of the attack."""
     if char_class == 'warrior':
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(3, 5)}')
@@ -17,6 +20,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Do function describing the logic of the defence."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -27,6 +31,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Do function describing the logic of the special skill."""
     if char_class == 'warrior':
         return (f'{char_name} применил '
                 f'специальное умение «Выносливость {80 + 25}»')
@@ -38,6 +43,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Do introductory function."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -63,6 +69,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Do choise char class."""
     approve_choice: str = 'n'
     char_class: str = input('Введи название персонажа, за которого '
                             'хочешь играть: Воитель — warrior, '
@@ -88,7 +95,8 @@ def choice_char_class() -> str:
     return char_class
 
 
-def main():
+if __name__ == '__main__':
+    run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
